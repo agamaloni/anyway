@@ -60,6 +60,18 @@
                     <img src="../static/img/settings.png" onclick="app.preferencesDialogLoad()" width="16" style="padding-left: 5px; cursor: pointer" />
                 {% endif %}
             </div>
+            <div style="float: left;">
+             <span id="email" >
+                 {% if current_user.is_authenticated %}
+                   <i>קבל עדכונים על התצוגה הנוכחית: </i>
+                   <button onclick="saveLocation()">שמור מיקום</button>
+                 {% else: %}
+                    <i>קבל עדכונים על התצוגה הנוכחית: </i>
+                    <button onclick="saveLocation()">שמור מיקום</button>
+                    <input type="email" placeholder="sophie@example.com" dir="ltr">
+                {% endif %}
+             </span>
+            </div>
                 <!--<i class="fa fa-bars" style="border-right: 1px solid #ddd; padding-right: 8px; border-left: 1px solid #ddd; padding-left: 8px;margin-right: 102px; font-size: 18px; line-height: 100%; vertical-align: middle; cursor: pointer"></i>-->
                 <div class="navbar-brand">
                     <a class="brand" href="/">
