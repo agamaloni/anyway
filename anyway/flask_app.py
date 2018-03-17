@@ -38,7 +38,7 @@ from .oauth import OAuthSignIn
 
 from .base import user_optional
 from .models import (AccidentMarker, DiscussionMarker, HighlightPoint, Involved, User, ReportPreferences,
-                     Vehicle, Role, GeneralPreferences)
+                     Vehicle, Role, GeneralPreferences, UserLocations)
 from .config import ENTRIES_PER_PAGE
 from six.moves import http_client
 

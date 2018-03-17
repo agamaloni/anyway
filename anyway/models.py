@@ -716,3 +716,22 @@ class ReportPreferences(Base):
             "radius": self.radius,
             "minimum_severity": self.minimum_severity
         }
+
+class UserLocations(Base):
+    __tablename__ = "user_locations"
+    id = Column(Integer, primary_key=True, unique=True)
+    user_id = Column(Integer())
+    email = Column(String(120))
+    latitude = Column(Float())
+    longitude = Column(Float())
+    radius = Column(Float())
+    created = Column(DateTime, default=datetime.datetime.now, index=True)
+    def serialize(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "latitude": self.latitude,
+            "longitude": self.longitude,
+            "radius": self.radius,
+            "created": self.created.isoformat()
+        }
